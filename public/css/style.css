@@ -1,0 +1,68 @@
+/**
+* Overwrite Bootstrap CSS
+*/
+
+.margin-top{
+	margin-top:20px !important;
+}
+.navbar-brand{
+    color: rgba(42, 152, 9, 0.9) !important;
+    font-weight: bold;
+    font-size: 25px;
+}
+.navbar-brand > span{
+	font-color: red !important;
+}
+.footer-bottom{
+	padding:20px;
+	background-color: #eee;
+	margin-top:20px;
+	position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.footer-bottom p{ text-align: center;}
+
+/******* */
+ 
+            .full-height {
+                height: 100vh;
+            }
+
+            .flex-center {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            .position-ref {
+                position: relative;
+            }
+
+            .top-right {
+                position: absolute;
+                right: 10px;
+                top: 18px;
+            }
+
+            .content {
+                text-align: center;
+            }
+
+            .title {
+                font-size: 84px;
+            }
+
+            .links > a {
+                color: #636b6f;
+                padding: 0 25px;
+                font-size: 13px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+
+            .m-b-md {
+                margin-bottom: 30px;
+            }
