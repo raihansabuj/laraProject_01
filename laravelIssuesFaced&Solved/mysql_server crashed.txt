@@ -1,0 +1,24 @@
+MySql and phpMyAdmin error fixed with these links help:
+
+https://forum.laragon.org/topic/801/host-localhost-is-not-allowed-to-connect-to-this-mariadb-server/6
+USE mysql;
+CHECK TABLE user;
+REPAIR TABLE user;
+
+Or
+https://superuser.com/questions/994903/126-incorrect-key-file-for-table-mysql-db-myi-try-to-repair-it
+Exactly the same happened to me, I tried the following query and it worked:
+
+USE mysql;
+CHECK TABLE db;
+
+If it returns db is corrupt, then repair it using
+
+REPAIR TABLE db;
+CHECK TABLE db;
+
+You should get status as OK.
+
+
+https://stackoverflow.com/questions/2547855/1130-host-localhost-is-not-allowed-to-connect-to-this-mysql-server
+add this in the [mysqld] section: skip-grant-tables.
