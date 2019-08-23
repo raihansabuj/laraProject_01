@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Duration;
 use Illuminate\Http\Request;
-
+use DB;
 class DurationController extends Controller
 {
     /**
@@ -14,7 +14,29 @@ class DurationController extends Controller
      */
     public function index()
     {
-        //
+        $duration = Duration::all();
+        $symptoms = DB::table('symptoms')->where([
+            ['status', '=', '1'],
+        ])->get();
+        
+
+        return view('admin.duration.index', compact('duration', 'symptoms'));
+
+    }
+    public function insert(Request $request)
+    {
+        $duration = new Duration;
+        $duration->title = $request->title;
+        $duration->symptom_id = $request->symptom_id;
+        $duration->note = $request->note;
+        $duration->save();
+
+        //echo "success";
+        $duration = Duration::all();
+        $symptoms = DB::table('symptoms')->where([
+                        ['status', '=', '1'],
+                    ])->get();
+        return view('admin.duration.index', compact('duration', 'symptoms'));
     }
 
     /**

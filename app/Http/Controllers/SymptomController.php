@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Symptom;
+use App\SymptomType;
 use Illuminate\Http\Request;
-
+use DB;
 class SymptomController extends Controller
 {
     /**
@@ -14,7 +15,9 @@ class SymptomController extends Controller
      */
     public function index()
     {
-        //
+        $symptoms = Symptom::all();
+        $symptomTypes = SymptomType::all('title', 'id'); 
+        return view('admin.symptom.index', compact('symptoms', 'symptomTypes'));
     }
 
     /**
@@ -36,6 +39,32 @@ class SymptomController extends Controller
     public function store(Request $request)
     {
         //
+    }
+    public function insert(Request $request)
+    {
+        $symptom = new Symptom;
+        $symptom->title = $request->title;
+        $symptom->symptom_type = $request->symptom_type;
+        $symptom->added_by = 1;
+        $symptom->status = 1;
+        $symptom->description = $request->description;
+        $symptom->save();
+
+        //echo "success";
+        $symptoms = Symptom::all();
+        $symptomTypes = SymptomType::all('title', 'id'); 
+        return view('admin.symptom.index', compact('symptoms', 'symptomTypes'));
+
+        //return view('admin.symptom.index');
+    }
+    public function getSymptom()
+    {
+        $data['data'] = Symptom::all();
+        if (count($data) > 0) {
+            return view('admin.symptom.insert', $data);
+        }else{
+            return view('admin.symptom.insert');
+        }
     }
 
     /**

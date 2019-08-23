@@ -16,7 +16,7 @@ class CreateDurationsTable extends Migration
         Schema::create('durations', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
-            $table->string('note');
+            $table->string('note')->nullable();
             $table->integer('symptom_id');
             $table->timestamps();
         });

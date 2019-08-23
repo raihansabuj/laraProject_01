@@ -17,7 +17,7 @@
 	padding:20px;
 	background-color: #eee;
 	margin-top:20px;
-	position: fixed;
+	position:relative !important;
     bottom: 0;
     width: 100%;
 }

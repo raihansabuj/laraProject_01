@@ -14,9 +14,24 @@ class SymptomTypeController extends Controller
      */
     public function index()
     {
-        //
+        $symptomTypes = SymptomType::all();
+        return view('admin.symptomType.index', compact('symptomTypes'));
     }
+    public function insert(Request $request)
+    {
+        $symptomType = new SymptomType;
+        $symptomType->title = $request->title;
+        $symptomType->parent_id = 1;
+        $symptomType->description = $request->description;
+         
+        $symptomType->save();
 
+        //echo "success";
+        $symptomTypes = SymptomType::all();
+        return view('admin.symptomType.index', compact('symptomTypes'));
+
+        //return view('admin.symptom.index');
+    }
     /**
      * Show the form for creating a new resource.
      *

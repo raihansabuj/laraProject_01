@@ -1,4 +1,15 @@
 	<title>Digital Doctor</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
 
 	<link rel="stylesheet" href="{{ asset('css/style.css')}}" >
+	
+     <!--plugin styles-->
+     <link type="text/css" rel="stylesheet" href="{{ asset('vendors/select2/css/select2.min.css')}}"/>
+     <link type="text/css" rel="stylesheet" href="{{ asset('vendors/datatables/css/dataTables.bootstrap.css')}}"/>
+     <link type="text/css" rel="stylesheet" href="{{ asset('css/admin/pages/dataTables.bootstrap.css')}}"/>
+ 
+     <!-- end of plugin styles -->
+     <!--Page level styles-->
+     <link type="text/css" rel="stylesheet" href="{{ asset('css/admin/pages/tables.css')}}"/>
+      

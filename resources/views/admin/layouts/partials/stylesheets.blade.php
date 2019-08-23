@@ -2,6 +2,8 @@
     <!--global styles-->
     <link type="text/css" rel="stylesheet" href="{{ asset('css/admin/components.css')}}" />
     <link type="text/css" rel="stylesheet" href="{{ asset('css/admin/custom.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/admin/font-awesome.min.css')}}" />
+
     <!-- end of global styles-->
     <link type="text/css" rel="stylesheet" href="{{ asset('vendors/chartist/css/chartist.min.css')}}" />
     <link type="text/css" rel="stylesheet" href="{{ asset('vendors/circliful/css/jquery.circliful.css')}}">

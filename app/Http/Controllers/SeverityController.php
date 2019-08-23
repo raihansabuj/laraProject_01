@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Severity;
+use App\Symptom;
+use DB;
 use Illuminate\Http\Request;
 
 class SeverityController extends Controller
@@ -14,7 +16,29 @@ class SeverityController extends Controller
      */
     public function index()
     {
-        //
+        $severity = Severity::all();
+        $symptoms = DB::table('symptoms')->where([
+            ['status', '=', '1'],
+        ])->get();
+        
+
+        return view('admin.severity.index', compact('severity', 'symptoms'));
+
+    }
+    public function insert(Request $request)
+    {
+        $severity = new Severity;
+        $severity->title = $request->title;
+        $severity->symptom_id = $request->symptom_id;
+        $severity->note = $request->note;
+        $severity->save();
+
+        //echo "success";
+        $severity = Severity::all();
+        $symptoms = DB::table('symptoms')->where([
+                        ['status', '=', '1'],
+                    ])->get();
+        return view('admin.severity.index', compact('severity', 'symptoms'));
     }
 
     /**

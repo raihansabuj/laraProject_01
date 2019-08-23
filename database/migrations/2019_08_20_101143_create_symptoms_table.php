@@ -19,7 +19,7 @@ class CreateSymptomsTable extends Migration
             $table->integer('symptom_type')->unsigned();
             $table->integer('added_by')->unsigned();
             $table->timestamp('added_on')->nullable();
-            $table->integer('modify_by');
+            $table->integer('modify_by')->nullable();
             $table->timestamp('modify_on')->nullable();
             $table->tinyInteger('status');
             $table->text('description')->nullable();
